@@ -2,6 +2,7 @@ import tensorflow as tf
 
 cluster_spec = tf.train.ClusterSpec({'worker' : ['localhost:2223'], 'ps' : ['localhost:2222']})
 server = tf.train.Server(cluster_spec,job_name='worker')
+server = tf.train.Server(cluster_spec,job_name='ps')
 
 tf.reset_default_graph()
 
